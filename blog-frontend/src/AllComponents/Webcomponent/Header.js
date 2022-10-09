@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import BlogapiContext from '../Api/Blogapi'
 
 export default function Header() {
+  let {loggedin}=useContext(BlogapiContext)
+  let {logoutuser}=useContext(BlogapiContext)
   return (
 <nav className="navbar navbar-expand-lg bg-light ">
   <div className="container-fluid">
@@ -11,7 +14,16 @@ export default function Header() {
     </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
+        {loggedin?(<>
+        <Link className="nav-link active text-link" aria-current="page" onClick={logoutuser}>Logout</Link>
+        <Link className="nav-link active text-link" aria-current="page" to='/createblog'>CreateBlog</Link>
+        <Link className="nav-link active text-link" aria-current="page" to='/userblogs'>MyBlogs</Link>
+        </>
+        )
+        :
+        (
         <Link className="nav-link active text-link" aria-current="page" to='/login'>Login</Link>
+        )}
         <Link className="nav-link active text-link" aria-current="page" to='/blogs'>Blogs</Link>
         <a className="nav-link text-link" href="#">Pricing</a>
         <a className="nav-link disabled text-link">Disabled</a>

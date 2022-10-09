@@ -14,3 +14,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    @property
+    def getusername(self):
+        return self.author.username
