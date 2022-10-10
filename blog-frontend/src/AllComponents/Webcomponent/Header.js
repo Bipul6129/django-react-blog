@@ -25,8 +25,7 @@ export default function Header() {
         <Link className="nav-link active text-link" aria-current="page" to='/login'>Login</Link>
         )}
         <Link className="nav-link active text-link" aria-current="page" to='/blogs'>Blogs</Link>
-        <a className="nav-link text-link" href="#">Pricing</a>
-        <a className="nav-link disabled text-link">Disabled</a>
+        
       </div>
     </div>
   </div>

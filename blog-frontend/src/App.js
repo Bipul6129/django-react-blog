@@ -10,6 +10,7 @@ import Blogdetail from './AllComponents/Linkcomponent/Blogdetail';
 import About from './AllComponents/Linkcomponent/About';
 import {CreateBlog} from './AllComponents/Linkcomponent/CreateBlog';
 import {UserBlogs} from './AllComponents/Linkcomponent/UserBlogs';
+import  EditBlog  from './AllComponents/Linkcomponent/EditBlog';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/blogdetail/:blogid' element={<Blogdetail/>}/>
           <Route exact path='/createblog' element={<CreateBlog/>}/>
           <Route exact path='/userblogs' element={<UserBlogs/>}/>
+          <Route exact path='/editblog' element={<EditBlog/>}/>
        </Routes>
        </BlogapiProvider>
        
